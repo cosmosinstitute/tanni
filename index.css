@@ -1,0 +1,309 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+
+}
+
+#page1{
+  min-height: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color:#fff;
+  padding: 0 2vw;
+}
+#image1{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+nav{
+  padding: 2vw 3vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#navpt2{
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+#navpt2 h4{
+  padding: 10px 20px;
+  border: 1px solid #706e6e;
+  border-radius: 50px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.774);
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+}
+#navpt2 h4::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease .4s;
+}
+#navpt2 h4:hover::after{
+  bottom: 0;
+  border-radius: 0;
+}
+#navpt2 h4 a{
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  z-index: 9;
+}
+#navpt2 h4:hover a{
+  color: white;
+
+}
+#centre{
+  height: 65vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2.5 vw;
+}
+#left h3 {
+  width: 30vw;
+  font-size: 2vw;
+  font-family:'rintbasics-italic.ttf';
+  line-height: 2vw;
+}
+#centre h1{
+  font-size: 7vw;
+  line-height: 7vw;
+  text-align: right;
+}
+.heading{
+  text-align: center;
+  padding-bottom: 25vw;
+ }
+
+
+#genrebody{
+  background-image: url(batman-4k-computer-desktop-backgrounds-wallpaper-preview.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  
+}
+#homebutton{
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+#homebutton h4{
+  padding: 10px 20px;
+  border: 1px solid #706e6e;
+  border-radius: 50px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.774);
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+}
+#homebutton h4::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease .4s;
+}
+#homebutton h4:hover::after{
+  bottom: 0;
+  border-radius: 0;
+}
+#homebutton h4 a{
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  z-index: 9;
+}
+#homebutton h4:hover a{
+  color: white;
+}
+.box1 {
+  width: 200px;
+  height: 200px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 200px;
+  transition: all 0.3s ease;
+  
+}
+
+.box1:hover {
+  background-color: #7fdb34;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.box2 {
+  width: 200px;
+  height: 200px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 200px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.box2:hover {
+  background-color: #3498db;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.genrerow1{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1vw;
+}
+.genrerow2{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1vw;
+}
+#hero-shape{
+  position: absolute;
+  width: 46vw;
+  height: 36vw;
+ 
+  right: 0;
+  top: 76vh;
+  
+}
+#hero1{
+  height: 100%;
+  width: 100%;
+  background-color: #fe320a;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  filter: blur(20px);
+  position: absolute;
+}
+
+#hero2{
+  height: 30vw;
+  width: 30vw;
+  background-color: #fe320a;
+  border-radius: 50%;
+  filter: blur(20px);
+  position: absolute;
+  animation-name: anime2;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+#hero3{
+  height: 30vw;
+  width: 30vw;
+  background: linear-gradient(#fe320a,rgb(206, 84, 3));
+  border-radius: 50%;
+  filter: blur(20px);
+  position: absolute;
+  animation-name: anime1;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes anime1 {
+  from{
+    transform: translate(-10%,10%);
+  }
+  to{
+    transform: translate(10%,-10%);
+  }
+  
+}
+@keyframes anime2 {
+  from{
+    transform: translate(20%,-15%);
+  }
+  to{
+    transform: translate(-20%,20%);
+  }
+  
+}
+#homevideo{
+  width: 96%;
+  margin-top: 4vw;
+  border-radius: 2vw;
+  position: absolute;
+  z-index: 10;
+}
+form{
+  text-align: center;
+  padding-top: 10vw;
+}
+#page2{
+  min-height: 100vw;
+  width: 100%;
+  
+  padding: 8vw 0;
+}
+#moving-text{
+  white-space: nowrap;
+  overflow: auto;
+}
+#moving-text::-webkit-scrollbar{
+  display: none;
+}
+#moving-text h1{
+  font-size: 9vw;
+ 
+  display: inline-block;
+}
+.con{
+  white-space: nowrap;
+  display: inline-block;
+  animation-name: move;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.gola{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color:#fe320a ;
+  display: inline-block;
+  margin: 1vw 3vw;
+}
+@keyframes move {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
