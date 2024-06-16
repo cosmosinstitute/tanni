@@ -1,1 +1,65 @@
-#submit 
+.pokai{
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    left: 6vw;
+    top: 50vh;
+   }
+  .tanni1{
+    height: 100%;
+    width: 100%;
+    background-color:red;
+    border-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+    animation-name: anime3;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+  
+  .tanni2{
+    height: 100%;
+    width: 100%;
+    background-color: #fe320a;
+    border-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+    animation-name: anime2;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+  
+  .tanni3{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#fe320a,rgb(206, 84, 3));
+    border-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+    animation-name: anime1;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+  @keyframes anime1 {
+    from{
+      transform: translate(-10%,10%);
+    }
+    to{
+      transform: translate(-50%,-10%);
+    }
+    
+  }
+  @keyframes anime2 {
+    from{
+      transform: translate(20%,-15%);
+    }
+    to{
+      transform: translate(-20%,20%);
+    }
+}

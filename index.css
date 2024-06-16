@@ -14,7 +14,7 @@ html,body{
   min-height: 100vw;
   height: 100vh;
   position: relative;
-  background-color:#fff;
+  background-color: #EFEAE3;
   padding: 0 2vw;
 }
 #image1{
@@ -194,11 +194,9 @@ nav{
   position: absolute;
   width: 46vw;
   height: 36vw;
- 
   right: 0;
   top: 76vh;
-  
-}
+ }
 #hero1{
   height: 100%;
   width: 100%;
@@ -207,6 +205,11 @@ nav{
   border-bottom-left-radius: 50%;
   filter: blur(20px);
   position: absolute;
+  animation-name: anime3;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
 
 #hero2{
@@ -222,7 +225,9 @@ nav{
   animation-direction: alternate;
   animation-iteration-count: infinite;
 }
-
+#centre{
+  background-color: #EFEAE3;
+}
 #hero3{
   height: 30vw;
   width: 30vw;
@@ -268,8 +273,9 @@ form{
 #page2{
   min-height: 100vw;
   width: 100%;
-  
+  position: relative;
   padding: 8vw 0;
+  background-color: #EFEAE3;
 }
 #moving-text{
   white-space: nowrap;
@@ -314,6 +320,8 @@ form{
   justify-content: space-between;
   align-items: center;
   padding: 10vw;
+  z-index: 9;
+  position: relative;
 }
 #page2-bottom h1{
   font-size: 3.5vw;
@@ -329,4 +337,61 @@ form{
 #bottom-part2 p{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 100;
+}
+#page2 #gooey{
+  height: 30vw;
+  width: 30vw;
+  position: absolute;
+  border-radius: 60%;
+  background: linear-gradient(to top,#fe320a,#fe630a);
+  top: 30%;
+  left: 20%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+@keyframes gooey {
+  from{
+    filter: blur(20px);
+    transform: translate(10%,-10%) skew(0);
+  }
+  to{
+    filter: blur(40px);
+    transform: translate(-10%,10%) skew(10deg);
+  }
+}
+#page3{
+  height: 100vh;
+  width: 100%;
+  background-color: #EFEAE3;
+}
+.elem{
+  height: 150px;
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #00000064;
+  border-bottom: 1px solid #00000064;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.elem h2{
+  font-size: 3vw;
+  position: relative;
+  z-index: 9;
+}
+.elem .overlay{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: orange;
+  left: 0;
+  top: -100%;
+  transition: all ease-out .3s;
+}
+.elem:hover .overlay{
+  top: 0;
 }
