@@ -1,65 +1,81 @@
-.pokai{
-    position: absolute;
-    width: 20vw;
-    height: 20vw;
-    left: 6vw;
-    top: 50vh;
-   }
-  .tanni1{
-    height: 100%;
-    width: 100%;
-    background-color:red;
-    border-radius: 50%;
-    filter: blur(20px);
-    position: absolute;
-    animation-name: anime3;
-    animation-duration: 7s;
-    animation-timing-function: linear;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-  }
-  
-  .tanni2{
-    height: 100%;
-    width: 100%;
-    background-color: #fe320a;
-    border-radius: 50%;
-    filter: blur(20px);
-    position: absolute;
-    animation-name: anime2;
-    animation-duration: 10s;
-    animation-timing-function: linear;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-  }
-  
-  .tanni3{
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(#fe320a,rgb(206, 84, 3));
-    border-radius: 50%;
-    filter: blur(20px);
-    position: absolute;
-    animation-name: anime1;
-    animation-duration: 12s;
-    animation-timing-function: linear;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-  }
-  @keyframes anime1 {
-    from{
-      transform: translate(-10%,10%);
-    }
-    to{
-      transform: translate(-50%,-10%);
-    }
-    
-  }
-  @keyframes anime2 {
-    from{
-      transform: translate(20%,-15%);
-    }
-    to{
-      transform: translate(-20%,20%);
-    }
+/* General Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;
+  background: #333;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+header p {
+  font-size: 1.5em;
+}
+
+/* Parallax Backgrounds */
+.parallax {
+  height: 500px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+#intro {
+  background-image: url('path/to/intro-image.jpg');
+}
+
+#film1 {
+  background-image: url('path/to/film1.jpg');
+}
+
+#film2 {
+  background-image: url('path/to/film2.jpg');
+}
+
+#film3 {
+  background-image: url('path/to/film3.jpg');
+}
+
+#film4 {
+  background-image: url('path/to/film4.jpg');
+}
+
+#film5 {
+  background-image: url('path/to/film5.jpg');
+}
+
+#film6 {
+  background-image: url('path/to/film6.jpg');
+}
+
+#film7 {
+  background-image: url('path/to/film7.jpg');
+}
+
+/* Film Info Section */
+.film-info {
+  text-align: center;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+.film-info h2 {
+  margin-top: 0;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: #fff;
 }
