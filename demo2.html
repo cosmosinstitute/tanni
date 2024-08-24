@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <h1 id="hola"></h1>
+    <form action="" id="profiledata">
+        <label for="name">name</label>
+    <input type="text" name="name" id="name">
+    <button type="button" onclick="submitform()">submit</button>
+    </form>
+    <script>
+        function submitform(){
+            const formdata=new FormData(document.getElementById('profiledata'))
+           const name=formdata.get('name')
+           document.getElementById('hola').textContent='HELLO '+name
+            document.getElementById('profiledata').classList.add('hidden')
+            for(const pair of formdata.entries()){
+                console.log(pair[0]+':'+pair[1])
+            }
+
+        }
+    </script>
+</body>
+</html>
