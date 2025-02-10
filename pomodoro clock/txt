@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unpausable Pomodoro Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Unpausable Pomodoro Clock</h1>
+        <div class="clock">
+            <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+        <div class="buttons">
+            <button id="start">Start</button>
+            <button id="reset">Reset</button>
+        </div>
+        <div class="history">
+            <h2>History</h2>
+            <ul id="historyList"></ul>
+        </div>
+        <div class="work-label-input">
+            <label for="workLabel">Work Label:</label>
+            <input type="text" id="workLabel">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+[24/10, 12:16 pm] The Unnamed Venom: body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    width: 300px;
+}
+
+.clock {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+.history {
+    margin-top: 20px;
+}
+
+.work-label-input {
+    margin-top: 20px;
+}
+
+#historyList {
+    list-style: none;
+    padding: 0;
+}
+
+#historyList li {
+    margin-bottom: 10px;
+}
+[24/10, 12:17 pm] The Unnamed Venom: let minutes = 25;
+let seconds = 0;
+let isRunning = false;
+let historyList = [];
+
+const minutesElement = document.getElementById("minutes");
+const secondsElement = document.getElementById("seconds");
+const startButton = document.getElementById("start");
+const resetButton = document.getElementById("reset");
+const historyListElement = document.getElementById("historyList");
+const workLabelInput = document.getElementById("workLabel");
+
+startButton.addEventListener("click", () => {
+    if (!isRunning) {
+        isRunning = true;
+        startButton.textContent = "Stop";
+        if (minutes === 0 && seconds === 0) {
+            promptUserForDuration();
+        } else {
+            startTimer();
+        }
+    } else {
+        isRunning = false;
+        startButton.textContent = "Start";
+        clearInterval(timerInterval);
+    }
+});
+
+resetButton.addEventListener("click", () => {
+    isRunning = false;
+    startButton.textContent = "Start";
+    minutes = 25;
+    seconds = 0;
+    updateClock();
+    clearInterval(timerInterval);
+    historyList = [];
+    historyListElement.innerHTML = "";
+    workLabelInput.value = "";
+});
+
+function promptUserForDuration() {
+    const desiredMinutes = parseInt(prompt("Enter desired Pomodoro duration (in minutes):"));
+    if (!isNaN(desiredMinutes)) {
+        minutes = desiredMinutes;
+        updateClock();
+        startTimer();
+    }
+}
+
+function startTimer() {
+    timerInterval = setInterval(() => {
+        if (seconds === 0) {
+            minutes--;
+            seconds = 59;
+        } else {
+            seconds--;
+        }
+        updateClock();
+
+        if (minutes === 0 && seconds === 0) {
+            clearInterval(timerInterval);
+            isRunning = false;
+            startButton.textContent = "Start";
+            saveToHistory();
+            alert("Pomodoro session completed!");
+        }
+    }, 1000);
+}
+
+function updateClock() {
+    minutesElement.textContent = String(minutes).padStart(2, "0");
+    secondsElement.textContent = String(seconds).padStart(2, "0");
+}
+
+function saveToHistory() {
+    const now = new Date();
+    const formattedTime = now.toLocaleTimeString();
+    const formattedDate = now.toLocaleDateString();
+    const workLabel = workLabelInput.value;
+    const historyItem = <li>${formattedDate} ${formattedTime} - ${minutes} minutes - ${workLabel}</li>;
+    historyListElement.insertAdjacentHTML("afterbegin", historyItem);
+    historyList.push(historyItem);
+}
